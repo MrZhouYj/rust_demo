@@ -1,0 +1,21 @@
+[package]
+name = "diesel_demo"
+version = "0.1.0"
+authors = ["周永建 <MrZhouYongJian@163.com>"]
+edition = "2018"
+
+
+[dependencies]
+diesel = { version = "*", features = ["mysql", "chrono", "r2d2"] }
+r2d2 = "*"
+chrono = "*"
+
+actix-rt = "*"
+actix-web = {version="*", features=["openssl"]}
+futures = "*"
+
+env_logger = "*"
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+dotenv = "*"
+
