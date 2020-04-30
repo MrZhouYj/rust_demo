@@ -4,12 +4,20 @@ version = "0.1.0"
 authors = ["周永建 <MrZhouYongJian@163.com>"]
 edition = "2018"
 
+[lib]
+name = "diesel_demo"
+path = "src/lib.rs"
+
+
+[[bin]]
+name = "diesel_demo"
+path = "src/main.rs"
 
 [dependencies]
-diesel = { version = "*", features = ["mysql", "chrono", "r2d2"] }
+diesel = { version = "*", features = ["mysql", "chrono", "r2d2", "bigdecimal"] }
 r2d2 = "*"
-chrono = "*"
 
+actix = "*"
 actix-rt = "*"
 actix-web = {version="*", features=["openssl"]}
 futures = "*"
@@ -18,4 +26,7 @@ env_logger = "*"
 serde = { version = "*", features = ["derive"] }
 serde_json = "*"
 dotenv = "*"
+bigdecimal = { version = ">= 0.0.10, <= 0.1.0", features = ["serde"] }
 
+actix-redis = "*"
+redis-async = "*"
